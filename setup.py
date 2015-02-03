@@ -27,7 +27,7 @@ except :
 
 setup(
     name = 'simplefileserver',
-    version = '0.0.2',
+    version = '0.0.3',
     description = 'Simple File Server By Bottle (Multi-threaded Server)',
     long_description = readme + history,
     author = 'Cole Smith',
