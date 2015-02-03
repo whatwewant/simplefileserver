@@ -1,0 +1,6 @@
+*.bac
+*.pyc
+*.pyo
+*~
+*dist*
+*.egg*

@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>{{title}}</title>
+    </head>
+    <body>
+        %for each in files_and_dirs :
+         <p>
+             <a href="/{{request_path}}/{{each}}">{{each}}</a>
+         </p>
+        %end
+    </body>
+</html>
