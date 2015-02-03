@@ -27,7 +27,7 @@ except :
 
 setup(
     name = 'simplefileserver',
-    version = '0.0.1',
+    version = '0.0.2',
     description = 'Simple File Server By Bottle (Multi-threaded Server)',
     long_description = readme + history,
     author = 'Cole Smith',
@@ -35,6 +35,9 @@ setup(
     url = 'https://github.com/whatwewant/SimpleFileServer',
     packages = ['simplefileserver'],
     package_dir = {"simplefileserver": "src"},
+    package_data = {
+        # 'templates': ['scr/templates/*.html'],
+    },
     include_package_data = True,
     install_requires = ['bottle', ' paste'],
     license = "Apache 2.0",
