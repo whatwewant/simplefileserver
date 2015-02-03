@@ -5,7 +5,11 @@
     <body>
         %for each in files_and_dirs :
          <p>
-             <a href="/{{request_path}}/{{each}}">{{each}}</a>
+             %if is_file(request_path, each):
+                <a href="/{{request_path}}/{{each}}">{{each}}</a>
+             %else:
+                <a href="/{{request_path}}/{{each}}">{{each}}/</a>
+             %end
          </p>
         %end
     </body>

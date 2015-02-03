@@ -25,11 +25,11 @@ def server(port=8080):
 
     @error(404)
     def error404(error):
-        return '404: Nothing here, sorry'
+        return '404 error: Nothing here, sorry'
 
     @error(500)
     def error500(error):
-        return '500: Nothing here, sorry'
+        return '500 error: Server Error'
 
     @route('/')
     def index():
@@ -39,7 +39,11 @@ def server(port=8080):
         return template('templates/index.html', 
                         {'title': 'Index',
                          'request_path': '.', 
-                        'files_and_dirs': files_and_dirs})
+                        'files_and_dirs': files_and_dirs,
+                        'is_file': is_file})
+
+    def is_file(request_path, name):
+        return os.path.isfile(os.path.join(request_path, name))
 
     #@route('/(?P<file_dirs>\w+)')
     # @route('/:file_dirs')
@@ -83,7 +87,8 @@ def server(port=8080):
             return template('templates/index.html', 
                         {'title': 'Index of' + request_path,
                          'request_path': request_path, 
-                         'files_and_dirs': files_and_dirs})
+                         'files_and_dirs': files_and_dirs,
+                        'is_file': is_file})
         else:
             return 'Nothing'
 
